@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MNLP · קורס פרקטישנר NLP מבוסס מיינדפולנס</title>
+  <meta name="description" content="MNLP — לימודי NLP מבוססי מיינדפולנס. קהילה שהיא בית, קורסים מקצועיים והעצמה אישית לחיים מיטיבים יותר." />
+
+  <!-- Fonts: Hebrew sans (Heebo, body) + Hebrew display (Varela Round, headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="uploads/mnlp-mark.png" />
+  <link rel="stylesheet" href="styles.css" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" data-marker="design-concept-noindex">
+<script src="banner.js" data-marker="design-concept-banner-loader" defer data-credit="oneofus.in"></script>
+</head>
+<body>
+
+  <!-- ===== Top utility bar ===== -->
+  <div class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__group">
+        <a class="topbar__item" href="tel:0772312054">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          <span>077-2312054</span>
+        </a>
+        <a class="topbar__item" href="mailto:office@mnlp.co.il">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4 8 5 8-5"/></svg>
+          <span>office@mnlp.co.il</span>
+        </a>
+        <span class="topbar__item topbar__item--muted">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <span>סנונית 18, נס ציונה</span>
+        </span>
+      </div>
+      <div class="topbar__group">
+        <a class="topbar__item" href="#">מרחב למידה — כניסה לסטודנטים</a>
+        <a class="topbar__item" href="#">ידיעות MNLP</a>
+        <a class="topbar__item topbar__social" href="#" aria-label="פייסבוק">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-3.5 1.5-3.5 3.6V11H8v3h2.5v7H14v-7h2.6l.4-3H14V9.8c0-.5.3-.8.8-.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Main navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#" aria-label="MNLP — דף הבית">
+        <img src="uploads/new-logo-dark.png" alt="MNLP Mindfulness" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="תפריט ראשי">
+        <a href="#hero">בית</a>
+        <a href="#courses">הקורסים שלנו</a>
+        <a href="#community">קהילה</a>
+        <a href="#about">הסיפור שלנו</a>
+        <a href="#">MNLP Online</a>
+        <a href="#contact">צור קשר</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="tel:0772312054">07-7231-2054</a>
+        <a class="btn btn--primary btn--sm" href="#courses">להרשמה</a>
+        <button class="nav__burger" id="navBurger" aria-label="פתיחת תפריט" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO — scroll-scrubbed video ===== -->
+  <section class="hero" id="hero">
+    <!-- stage gets pinned by GSAP -->
+    <div class="hero__stage" id="heroStage">
+      <div class="hero__media">
+        <video
+          id="heroVideo"
+          class="hero__video"
+          src="uploads/hero-scrub.mp4"
+          poster="uploads/hero-poster.jpg"
+          muted
+          playsinline
+          webkit-playsinline
+          preload="auto"
+          tabindex="-1"></video>
+        <div class="hero__overlay" id="heroOverlay"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero text, revealed on scroll -->
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow"><span>NLP</span> · מבוסס מיינדפולנס</p>
+        <h1 class="hero__title" id="heroTitle">קורס פרקטישנר NLP מבוסס מיינדפולנס</h1>
+        <p class="hero__sub">מסע של העצמה אישית לחיים מיטיבים יותר — <strong>ההרשמה בעיצומה!</strong></p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#courses">לפרטים נוספים</a>
+          <a class="btn btn--outline btn--lg" href="#community">הצצה לקהילה</a>
+        </div>
+      </div>
+
+      <!-- Scroll cue, visible on first frame -->
+      <div class="hero__cue" id="heroCue" aria-hidden="true">
+        <span>גללו לגילוי</span>
+        <svg viewBox="0 0 24 24"><path d="M12 4v14m0 0-6-6m6 6 6-6"/></svg>
+      </div>
+
+      <!-- Progress line -->
+      <div class="hero__progress"><span id="heroProgress"></span></div>
+    </div>
+  </section>
+
+  <!-- ===== COMMUNITY / GALLERY ===== -->
+  <section class="community" id="community">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">הקהילה שלנו</p>
+        <h2 class="section-title">MNLP — <span class="text-grad">קהילה שהיא בית</span></h2>
+        <p class="section-lead">
+          מעל לכל קורס, אנחנו קהילה חמה ותומכת של לומדים, בוגרים ומנחים — מרחב בטוח לצמיחה,
+          לחיבור ולהעצמה הדדית. הצטרפו אלינו.
+        </p>
+      </header>
+
+      <div class="gallery reveal" id="gallery">
+        <figure class="gallery__item gallery__item--tall" data-caption="מחזור בוגרים">
+          <img src="uploads/feature_images/60981874_2346203935418177_8786737264882352128_o-600x450.jpg" alt="מחזור בוגרים MNLP" loading="lazy" />
+        </figure>
+        <figure class="gallery__item" data-caption="מפגש קהילה">
+          <img src="uploads/feature_images/117379423_10160167862986258_8949652922092627362_n-600x450.jpg" alt="מפגש קהילה MNLP" loading="lazy" />
+        </figure>
+        <figure class="gallery__item" data-caption="סדנת תרגול">
+          <img src="uploads/feature_images/78679202_2724285157610051_2117346064347430912_n-600x450.jpg" alt="סדנת תרגול NLP" loading="lazy" />
+        </figure>
+        <figure class="gallery__item" data-caption="המרחב שלנו">
+          <img src="uploads/feature_images/new-place-1-600x450.jpeg" alt="המרחב של MNLP" loading="lazy" />
+        </figure>
+        <figure class="gallery__item gallery__item--wide" data-caption="יום עיון">
+          <img src="uploads/feature_images/%D7%9E%D7%A8%D7%9B%D7%96-%D7%AA%D7%9E%D7%95%D7%A0%D7%94-%D7%9C%D7%A9%D7%99%D7%95%D7%95%D7%A7-1-600x469.jpeg" alt="יום עיון MNLP" loading="lazy" />
+        </figure>
+        <figure class="gallery__item" data-caption="הבית שלנו · נס ציונה">
+          <img src="uploads/feature_images/new-place-2-600x450.jpeg" alt="הבית של MNLP בנס ציונה" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COURSES ===== -->
+  <section class="courses" id="courses">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">תוכניות לימוד</p>
+        <h2 class="section-title">הקורסים המקצועיים שלנו</h2>
+        <p class="section-lead">שלושה שלבים במסע אחד — מהיכרות ראשונה עם NLP ועד הנחיית קבוצות.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__badge">פופולרי</div>
+          <div class="card__icon"><img src="uploads/mnlp-mark.png" alt="" aria-hidden="true" /></div>
+          <h3 class="card__title">MNLP פרקטישנר</h3>
+          <p class="card__text">
+            קורס NLP מבוסס מיינדפולנס — קורס להעצמה אישית לחיים מיטיבים יותר.
+            <span class="card__tag">מתאים לקהל הרחב</span>
+          </p>
+          <a class="card__link" href="#">לפרטים והרשמה
+            <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon"><img src="uploads/mnlp-mark.png" alt="" aria-hidden="true" /></div>
+          <h3 class="card__title">MNLP מאסטר פרקטישנר</h3>
+          <p class="card__text">
+            קורס המשך של לימודי NLP, להעמקה והרחבה של הכלים.
+            <span class="card__tag">לבוגרי/ות קורס פרקטישנר</span>
+          </p>
+          <a class="card__link" href="#">לפרטים והרשמה
+            <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon"><img src="uploads/mnlp-mark.png" alt="" aria-hidden="true" /></div>
+          <h3 class="card__title">MNLP מאסטר טריינר</h3>
+          <p class="card__text">
+            קורס מאסטר טריינר לבוגרי מאסטר פרקטישנר שרוצים כלים להנחיית קבוצות.
+            <span class="card__tag">להנחיית קבוצות</span>
+          </p>
+          <a class="card__link" href="#">לפרטים והרשמה
+            <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / VALUES strip ===== -->
+  <section class="values" id="about">
+    <div class="container values__grid">
+      <div class="values__item reveal">
+        <span class="values__num" data-count="1200">0</span>
+        <p>בוגרים ובוגרות</p>
+      </div>
+      <div class="values__item reveal">
+        <span class="values__num" data-count="15">0</span>
+        <p>שנות ניסיון</p>
+      </div>
+      <div class="values__item reveal">
+        <span class="values__num" data-count="98" data-suffix="%">0</span>
+        <p>ממליצים לחבר/ה</p>
+      </div>
+      <div class="values__item reveal">
+        <span class="values__num" data-count="40">0</span>
+        <p>מחזורי לימוד</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA band ===== -->
+  <section class="cta-band">
+    <div class="container cta-band__inner reveal">
+      <div>
+        <h2>מוכנים להתחיל את המסע?</h2>
+        <p>ההרשמה לקורס הפרקטישנר הקרוב בעיצומה. נשמח ללוות אתכם בצעד הראשון.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light btn--lg" href="tel:0772312054">דברו איתנו · 077-2312054</a>
+        <a class="btn btn--outline-light btn--lg" href="#courses">לכל הקורסים</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="uploads/new-logo-dark.png" alt="MNLP Mindfulness" />
+        <p>לימודי NLP מבוססי מיינדפולנס — קהילה שהיא בית, להעצמה אישית וצמיחה.</p>
+      </div>
+      <div class="footer__col">
+        <h4>ניווט</h4>
+        <a href="#hero">בית</a>
+        <a href="#courses">הקורסים שלנו</a>
+        <a href="#community">קהילה</a>
+        <a href="#about">הסיפור שלנו</a>
+      </div>
+      <div class="footer__col">
+        <h4>קורסים</h4>
+        <a href="#">MNLP פרקטישנר</a>
+        <a href="#">MNLP מאסטר פרקטישנר</a>
+        <a href="#">MNLP מאסטר טריינר</a>
+        <a href="#">MNLP Online</a>
+      </div>
+      <div class="footer__col">
+        <h4>צרו קשר</h4>
+        <a href="tel:0772312054">077-2312054</a>
+        <a href="mailto:office@mnlp.co.il">office@mnlp.co.il</a>
+        <a href="#">סנונית 18, נס ציונה</a>
+      </div>
+    </div>
+    <div class="footer__bar container">
+      <span>© <span id="year"></span> MNLP Mindfulness · כל הזכויות שמורות</span>
+      <span class="footer__credit">עוצב מחדש עם ❤︎ ו־GSAP</span>
+    </div>
+  </footer>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

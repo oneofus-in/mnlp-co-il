@@ -1,0 +1,12 @@
+# Scraped source material — reference only, never published.
+upload/
+uploads/
+
+# Local agent / editor / OS cruft
+.claude/
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.local
